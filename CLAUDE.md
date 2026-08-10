@@ -166,3 +166,15 @@ catching you out, a fact about the stack that's easy to get wrong --- write it
 down here. Growing this file is the work of harness engineering, and the gap
 between this boilerplate and your own version is part of what your prototype
 says about the developer you're becoming.
+
+## Stylelint order, not just syntax
+
+`stylelint-config-standard`'s `no-descending-specificity` cares about
+**source order relative to specificity**, not just whether a rule is
+individually valid: it flags a lower-specificity selector (`a`, `footer a`)
+appearing *after* a higher-specificity one (`.site-title a`, `a:visited`) when
+they touch the same property, even across unrelated sections of the file. The
+build can succeed while this still fails `pnpm check`. Write element-only
+selectors first, then layout containers, then component classes/attribute
+selectors last, and it won't come up --- reordering after the fact instead
+means hunting each error one at a time as fixing one exposes the next.

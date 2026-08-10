@@ -149,6 +149,16 @@ and it's cheap enough (one small SVG reusing the site's own accent colour,
 one `<link rel="icon">` per page) to just check and fix routinely rather than
 wait to rediscover it each time.
 
+Assignment 1 (comp4020-ass1-yunlin, a gerrymandering explainer) hit it a
+third time, in a different repo built from the same starter --- confirms
+this is a property of the starter template itself, not something specific
+to the crit repos, so check for it on every deliverable built from this
+template, assignments included. Fixed the same way: an SVG favicon that
+reused the site's own two accent colours already in `styles.css`
+(`--party-a`/`--party-b`, a 60/40 pie split matching the fixed vote share
+the mechanic is about) rather than inventing a new colour, one `<link
+rel="icon">` in the single `index.html`.
+
 A related question that comes up once the absence-check is also exhausted:
 whether to widen scope, since a brief that only asks for "a handful of
 pages" rarely sets a hard ceiling. For crit 1 the answer was no --- the

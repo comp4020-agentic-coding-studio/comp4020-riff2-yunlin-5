@@ -2,56 +2,62 @@
 
 ## State
 
-comp4020-crit2-yunlin, "Unsolicited redesign" (TUG/tug.org). 39h to cutoff at
-the start of this run. The prototype — five hand-written HTML pages plus
-PROCESS.md and `reflections/crit-2.md` — was already fully built, checked,
-and shipped by an earlier run this week (commits through `f142ce7`); this run
-was genuine deepen-phase work, not a rebuild.
+comp4020-crit2-yunlin, "Unsolicited redesign" (TUG/tug.org). 28h to cutoff at
+the start of this run. The site was already fully built and shipped by prior
+runs (commits through `a7285ae`): a five-page hand-written HTML/CSS/TS
+redesign of tug.org (index, tex.html, join.html, publications.html,
+colophon.html), `PROCESS.md`, `reflections/crit-2.md`, a favicon, and
+`spec/crit2.test.ts` asserting no `<script>`/`<form>` anywhere and a real
+link to tug.org. Working tree was clean on arrival; this run made **no code
+changes** --- it was pure deepen-phase re-verification, and everything held:
 
-Did a fresh, independent read-through (not trusting the earlier run's
-memory that sourcing "checked out clean") and found two real things:
+1. `pnpm check` (typecheck, build, oxlint, stylelint, 52 vitest tests),
+   `pnpm check:evidence`, and a fresh `linkinator ./dist` all green.
+2. Live GitHub Pages URL still correctly 404s (repo private until shipped,
+   consistent with every prior week).
+3. Fresh `agent-browser` pass, all five pages, both marking viewports
+   (1920x1080, 390x844) --- zero console errors at either size, confirming
+   PROCESS.md's existing verification claim rather than just trusting it.
+   Screenshots also looked right (paper tone, seal-stamp red kicker/nav
+   underline, readable measure).
+4. Checked two specific claims that looked like the "same fact, two
+   numbers" drift bug crit 2 already caught once (fixed in `772bd5c`):
+   index.html's kicker says "A nonprofit, since 1980" (TUG's founding),
+   tex.html's says "Started 1978, still running" (TeX the software's first
+   release). Web-searched both --- they're correctly two *different* facts,
+   not a restated one, so no fix needed
+   ([Wikipedia](https://en.wikipedia.org/wiki/TeX),
+   [tug.org/whatis.html](https://tug.org/whatis.html)).
+5. colophon.html's sourcing list cites `aims_ben.html` as one of the real
+   tug.org pages used --- looked like a typo (an accidental "_ben") worth
+   checking. `curl`'d it directly: it's genuinely tug.org's real filename
+   for their "Aims, benefits, projects" page (`aims.html` 404s,
+   `aims_ben.html` returns 200), and the three membership aims quoted in
+   `join.html` match that real page's bylaws summary. Citation is accurate,
+   not a bug.
+6. Confirmed the favicon (`favicon.svg` -> hashed asset in `dist/`) is wired
+   via `<link rel="icon">` on all five built pages, and grepped `dist/*.html`
+   for stray `<script>`/`<form>` --- none beyond the word "font" appearing in
+   prose. No absence found.
 
-1. **Cross-page numeric inconsistency**: `index.html` said TeX was
-   "45-year-old", `tex.html`'s meta description said "forty years on" ---
-   same 1978 start date, two different numbers, neither wrong read alone.
-   Fixed both to non-numeric "decades-old" / "decades on" so the claim can't
-   drift out of sync with itself again (commit `772bd5c`). Everything else
-   checked against a fresh `curl` of tug.org's real pages (homepage,
-   whatis.html, aims_ben.html, join.html, TUGboat/, texlive/, contact.html,
-   meetings/) held up: founding year 1980, the three membership aims, the PO
-   Box address, TUGboat's three-issues-a-year cadence, the DANTE/GuIT/GUT/NTG
-   joint-membership groups, the tex-meetings mailing list all matched.
-2. **Missing favicon** --- same absence crit 1 caught last time, confirmed
-   missing from every page's `<head>` before fixing it. Added `favicon.svg`
-   (reuses the site's own `--seal` red and `--paper` tone from `styles.css`,
-   not a new colour) and a `<link rel="icon">` on all five pages (commit
-   `c1b6312`). Folded into MEMORY.md as a standing deepen-phase check for
-   this starter template, since it's now recurred once.
-
-Verified after both fixes: `pnpm check` green (typecheck, build, oxlint,
-stylelint, 52 vitest tests), `pnpm check:evidence` green, `linkinator ./dist`
-0 broken links, `agent-browser` at both 1920×1080 and 390×844 across all five
-pages with zero console errors, favicon confirmed served at its built hashed
-path. Repo is clean and pushed to `origin/main` at `c1b6312`. Deployed URL
-still 404s (repo is still private this week — that's the harness's `/ship`
-to trigger, not mine).
+Nothing was broken, nothing needed fixing, so nothing was committed this run
+(repo is exactly at `a7285ae`, clean, pushed).
 
 ## Next action
 
-Both items on the last hand-off's list (content re-read, absence-check) are
-now done and found real, fixable things — this run's proof that the
-deepen-phase discipline (verify before assuming clean) keeps paying off even
-on a site an earlier run already fact-checked once.
+28h is close to the 24h finishing-steps line but the finishing steps
+themselves (PROCESS.md, reflection, evidence, favicon) are already done from
+prior runs --- there's no backlog of finishing work waiting. A fresh
+deepen-phase pass this run found nothing new to fix, which per MEMORY.md's
+crit-1-28h precedent is itself the signal, not a reason to manufacture
+busywork. For the next run on this repo, inside or near the 24h window:
 
-Nothing else outstanding was found this pass. Next run, before manufacturing
-a new check:
-
-1. Confirm nothing regressed (`pnpm check`, quick browser pass) — cheap,
-   worth doing every run regardless.
-2. If genuinely nothing new turns up, this is close enough to done that the
-   right call is likely to stop rather than invent a third pass — per the
-   "24h threshold is a judgment call, not a literal clock" lesson in
-   MEMORY.md's deepen-phase section. Re-read that section before deciding.
-3. Only widen scope (more pages, more features) if it would strengthen the
-   site's actual argument (TUG's own site isn't well-typeset; this one
-   should be) — not just because time remains.
+1. Re-run `pnpm check` once more close to cutoff as a final sanity check ---
+   cheap, and confirms nothing regressed between now and shipping.
+2. Don't widen scope (a sixth page, more content) unless it's clearly in
+   service of the redesign's stated argument (legibility, one question per
+   page) --- same restraint lesson as crit 1 and assignment 1, and this
+   site's own colophon explicitly argues for doing *less*, more clearly.
+3. If truly nothing is left to check when next picked up, that's the signal
+   to treat this deliverable as done and stop touching it, not to invent a
+   pass.

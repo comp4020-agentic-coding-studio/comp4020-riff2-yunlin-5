@@ -61,6 +61,21 @@ of *both* kinds whenever a future brief's content leans on factual detail or
 describes its own design --- treat "here's what this page/motif/layout does"
 as its own checkable-claim category, not a subset of proofreading.
 
+Crit 2 added a fourth failure shape to watch for: **the same fact stated
+twice with two different numbers, neither one wrong in isolation.**
+`index.html` said TUG's typesetting system was "45-year-old"; `tex.html`'s
+meta description said it was "still used forty years on" --- both about the
+same 1978 start date, on the same site, five years apart from each other.
+Neither claim looks wrong read alone (a fresh single-page proofread would
+pass both), and it isn't the "wrong count on one page" shape from crit 1
+either --- it only surfaces by holding two pages' claims about the same fact
+next to each other. Fixed by rewording both to non-numeric "decades-old" /
+"decades on," per the existing lesson below that a loose term is safer than
+a specific number when the number is going to keep drifting anyway (here,
+against each other, not just against the calendar). Worth a deliberate
+cross-page pass --- not just per-page --- whenever content repeats the same
+fact (an age, a count, a date) more than once across a multi-page site.
+
 Not every self-referential claim is a bug waiting to be found, though, and
 it's worth telling the two failure modes apart. `colophon.html`'s "Type is
 the system serif" describes an ordered fallback stack
@@ -126,6 +141,14 @@ error logged, so this was polish, not a regression). Cheap to check, and
 it's the difference between a genuine improvement and inventing work to
 look busy.
 
+Crit 2 hit the exact same absence --- no favicon, confirmed missing from
+every page's `<head>` before adding one --- which makes it worth promoting
+from "a thing crit 1 happened to find" to a standing item on the deepen-phase
+absence-check for this starter template specifically: it doesn't ship one,
+and it's cheap enough (one small SVG reusing the site's own accent colour,
+one `<link rel="icon">` per page) to just check and fix routinely rather than
+wait to rediscover it each time.
+
 A related question that comes up once the absence-check is also exhausted:
 whether to widen scope, since a brief that only asks for "a handful of
 pages" rarely sets a hard ceiling. For crit 1 the answer was no --- the
@@ -190,3 +213,29 @@ to wait for the threshold to become literally true.
   crit-1's `scripts/audit.ts` to wire the accessibility+performance sensor
   the starter template names but doesn't provide --- worth reusing whenever a
   future week's template has the same gap.
+- `agent-browser find text "<X>" click` matches whichever element contains
+  that text first, silently, with no error if it's the wrong one --- in
+  assignment 1 it clicked a `<strong>B</strong>` in a paragraph instead of a
+  grid cell whose visible letter was also "B", and the resulting screenshot
+  looked identical to before, reading as "nothing happened" when actually a
+  different click just landed. `agent-browser snapshot` (accessibility-tree
+  dump with `[ref=eN]` ids) followed by `click "ref=eN"` is the reliable
+  pattern once a page has more than one element sharing visible text ---
+  re-run `snapshot` after any render that could have replaced the DOM, since
+  a stale ref fails to resolve rather than clicking the wrong thing.
+- **jsdom does not model keyboard-focus loss on DOM-node removal the way a
+  real browser does.** A widget whose click handler does
+  `container.innerHTML = ""` and rebuilds children (a common pattern for
+  "re-render on state change") will silently drop focus to `<body>` in
+  Chrome on every click --- but a jsdom-based interaction test that only
+  asserts the resulting DOM state (text, aria-labels, attributes) stays
+  green straight through that regression, since jsdom's activeElement
+  behaviour around removed nodes doesn't reproduce the real-browser gap.
+  Assignment 1's `spec/interaction.test.ts` was fully green while the live
+  page bounced a keyboard user back to the top of the document after every
+  click. Only caught by manually driving the dev server with `agent-browser`
+  (`press Tab`, `press Enter`, then reading `document.activeElement`) rather
+  than trusting the automated suite. Any future widget with a
+  rebuild-on-click render pattern needs this specific manual keyboard check
+  --- it is not a case automated jsdom tests can substitute for, however
+  thorough the assertions.

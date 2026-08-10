@@ -2,76 +2,56 @@
 
 ## State
 
-comp4020-crit2-yunlin, crit 2 ("Unsolicited redesign"). 45h to cutoff at the
-start of this run, which built the whole prototype from the fresh starter
-repo (one commit, boilerplate only) in a single pass.
+comp4020-crit2-yunlin, "Unsolicited redesign" (TUG/tug.org). 39h to cutoff at
+the start of this run. The prototype — five hand-written HTML pages plus
+PROCESS.md and `reflections/crit-2.md` — was already fully built, checked,
+and shipped by an earlier run this week (commits through `f142ce7`); this run
+was genuine deepen-phase work, not a rebuild.
 
-Picked a real target early and deliberately: the TeX Users Group (tug.org),
-a real nonprofit whose mission (high-quality typesetting) makes the
-redesign's thesis checkable and a little ironic --- their own site is 1990s
-inline-styled HTML with no hierarchy. Verified every fact used (founding
-year, Knuth's `Art of Computer Programming` history, postal address,
-membership aims, journal/distribution/conference details) by `curl`-ing
-tug.org's real pages directly, not from a search summary (`WebFetch` 403'd
-on tug.org; `curl` worked fine).
+Did a fresh, independent read-through (not trusting the earlier run's
+memory that sourcing "checked out clean") and found two real things:
 
-Built five hand-written HTML pages (index, tex, join, publications,
-colophon) --- stayed on the starter's plain HTML/CSS/TS rather than
-switching to the new course-default Astro, since no vetted stack-conversion
-skill was available in this session and five static pages don't need
-componentisation; this is an explicitly legitimate spec choice. Removed the
-starter's placeholder `main.ts`/script tag entirely --- the site needs zero
-client-side JS. Carried the crit-1 aesthetic voice forward but not its
-content: system serif, paper tone, classic blue links, one accent colour
-(a "seal-red", used for exactly two things: kicker text and the current-nav
-underline), argued in `colophon.html` as an ink-wash seal-stamp logic rather
-than reused Ni Zan material.
+1. **Cross-page numeric inconsistency**: `index.html` said TeX was
+   "45-year-old", `tex.html`'s meta description said "forty years on" ---
+   same 1978 start date, two different numbers, neither wrong read alone.
+   Fixed both to non-numeric "decades-old" / "decades on" so the claim can't
+   drift out of sync with itself again (commit `772bd5c`). Everything else
+   checked against a fresh `curl` of tug.org's real pages (homepage,
+   whatis.html, aims_ben.html, join.html, TUGboat/, texlive/, contact.html,
+   meetings/) held up: founding year 1980, the three membership aims, the PO
+   Box address, TUGboat's three-issues-a-year cadence, the DANTE/GuIT/GUT/NTG
+   joint-membership groups, the tex-meetings mailing list all matched.
+2. **Missing favicon** --- same absence crit 1 caught last time, confirmed
+   missing from every page's `<head>` before fixing it. Added `favicon.svg`
+   (reuses the site's own `--seal` red and `--paper` tone from `styles.css`,
+   not a new colour) and a `<link rel="icon">` on all five pages (commit
+   `c1b6312`). Folded into MEMORY.md as a standing deepen-phase check for
+   this starter template, since it's now recurred once.
 
-Wrote `spec/crit2.test.ts` (retired the starter's `starter.test.ts`,
-which described a page that no longer exists) asserting the mechanically
-checkable spec lines: a link out to the real org, no `<form>`/`<script>`
-anywhere in `dist/` (static, no backend), and the home nav reaching every
-page.
-
-Verified before shipping:
-- `pnpm check` green: typecheck, build, oxlint, stylelint, 52 vitest tests.
-- `pnpm dlx linkinator ./dist --silent` --- 0 broken links.
-- `agent-browser` at both 1920×1080 and 390×844, all five pages, zero
-  console errors at either size (needed `--args "--no-sandbox"` on first
-  open, then `set viewport`, then reopen --- same sequence as crit 1).
-- `pnpm check:evidence` green (PROCESS.md's two cited commits resolve,
-  `reflections/crit-2.md` matches the current deliverable).
-
-Wrote `PROCESS.md` (replacing the template) citing the two build commits,
-`reflections/crit-2.md` (293 words, in range), and added a CLAUDE.md note on
-stylelint's `no-descending-specificity` ordering gotcha (see MEMORY.md for
-the durable version). Repo is clean and pushed to `origin/main` at
-`c1e68eb`. Still private (crit window doesn't close for ~45h from the run
-start) --- `/ship` and the CI jobs are the harness's to trigger later, not
-mine to force.
+Verified after both fixes: `pnpm check` green (typecheck, build, oxlint,
+stylelint, 52 vitest tests), `pnpm check:evidence` green, `linkinator ./dist`
+0 broken links, `agent-browser` at both 1920×1080 and 390×844 across all five
+pages with zero console errors, favicon confirmed served at its built hashed
+path. Repo is clean and pushed to `origin/main` at `c1b6312`. Deployed URL
+still 404s (repo is still private this week — that's the harness's `/ship`
+to trigger, not mine).
 
 ## Next action
 
-Nothing left to build for a first pass; this is early in the week (build
-phase, not deepen or finish yet), so a run landing well before cutoff should
-actually look for real gaps rather than reassurance-pass or declare done:
+Both items on the last hand-off's list (content re-read, absence-check) are
+now done and found real, fixable things — this run's proof that the
+deepen-phase discipline (verify before assuming clean) keeps paying off even
+on a site an earlier run already fact-checked once.
 
-1. Re-read all five pages fresh against tug.org's real pages one more time
-   for a factual slip --- this run did the sourcing carefully but a second,
-   independent pass (per the content-practices habit) hasn't happened yet.
-   Check especially: TUGboat issue cadence, the exact membership aims
-   wording, and the contact address, against `curl`'d tug.org pages, not
-   memory of this run.
-2. Consider whether five pages is the right ceiling, the same "check what
-   the site is arguing" test crit 1 used before adding scope --- this site's
-   argument is "one clear question per page," so a sixth page needs its own
-   clear question, not just more content for its own sake.
-3. A close reading of `colophon.html`'s self-referential design claims
-   specifically (the "seal-red used for exactly two things" claim, the list
-   of source pages) against the actual CSS/markup, the same self-description
-   scrutiny crit 1's memory flags as its own checkable-claim category.
-4. Once those are exhausted with nothing found, don't manufacture further
-   passes --- say so plainly in this file and, if there's still time left,
-   move to the deepen-phase absence-check (does the site actually deliver
-   everything it claims about itself, e.g. no dead links, no missing
-   favicon) rather than repeating a pass that already came back clean.
+Nothing else outstanding was found this pass. Next run, before manufacturing
+a new check:
+
+1. Confirm nothing regressed (`pnpm check`, quick browser pass) — cheap,
+   worth doing every run regardless.
+2. If genuinely nothing new turns up, this is close enough to done that the
+   right call is likely to stop rather than invent a third pass — per the
+   "24h threshold is a judgment call, not a literal clock" lesson in
+   MEMORY.md's deepen-phase section. Re-read that section before deciding.
+3. Only widen scope (more pages, more features) if it would strengthen the
+   site's actual argument (TUG's own site isn't well-typeset; this one
+   should be) — not just because time remains.

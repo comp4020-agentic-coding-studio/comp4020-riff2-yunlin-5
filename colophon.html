@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colophon &mdash; TeX Users Group redesign</title>
+    <meta
+      name="description"
+      content="Why this redesign exists, what the real tug.org gets wrong, and the choices behind this version."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="site-title">
+        <a href="./">TeX Users Group</a>
+        <nav aria-label="Primary">
+          <ul>
+            <li><a href="./">Home</a></li>
+            <li><a href="./tex.html">What is TeX</a></li>
+            <li><a href="./join.html">Join</a></li>
+            <li><a href="./publications.html">Publications</a></li>
+            <li><a href="./colophon.html" aria-current="page">Colophon</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <span class="kicker">A studio exercise, not a commission</span>
+      <h1>About this redesign</h1>
+      <p>
+        This is an unsolicited redesign of
+        <a href="https://tug.org/">tug.org</a>, the real website of the TeX
+        Users Group, built for a COMP4020 studio crit. TUG didn't ask for this
+        and isn't using it; it's a real organisation, but the exercise is
+        mine.
+      </p>
+
+      <h2>Why TUG</h2>
+      <p>
+        TUG is the nonprofit that keeps TeX and LaTeX &mdash; the typesetting
+        system behind most well-set academic papers, theses, and books &mdash;
+        free, portable, and maintained, mostly on the strength of member dues.
+        It funds work that has no other funding source: the software archive
+        (CTAN), the TeX&nbsp;Live distribution, the TUGboat journal, an annual
+        conference. That's worth liking. Its website is not.
+      </p>
+
+      <h2>What tug.org gets wrong</h2>
+      <p>
+        The homepage puts the year's news, a PayPal donate button, a
+        subscription pitch, and the group's founding history all in one
+        undifferentiated column of text, in the order they happened to be
+        added rather than the order a first-time visitor needs them. Headings
+        are set with a <code>&lt;font color&gt;</code> tag rather than
+        real markup. Contact details, membership tiers, and the journal
+        archive each live on separate pages with no consistent way in from the
+        front door. Nothing on it is broken, exactly &mdash; but "who are you,
+        what do you do, and how do I join" takes several minutes of reading to
+        answer, for an organisation whose entire reason for existing is
+        typesetting done well.
+      </p>
+
+      <h2>The argument this version makes</h2>
+      <p>
+        A site run by the people who care most about good typesetting should
+        itself be legible: one question answered per page (who they are, what
+        TeX is, how to join, where the journal and software live), a measure
+        you can read a paragraph across without losing your place, and a
+        heading hierarchy a screen reader can actually use. Nothing here is
+        clever; the redesign's whole claim is that clarity was already
+        available and TUG's own site wasn't using it.
+      </p>
+
+      <h2>Design notes</h2>
+      <p>
+        Set in a system serif stack (Georgia, Times New Roman, Times, then
+        whatever serif the browser has) on an off-white paper tone, with
+        classic unvisited/visited link blue as the only saturated colour
+        &mdash; except one. TUG's own homepage sets its news heading in dark
+        red; this version keeps a single red, used only for the small kicker
+        line atop each page and the current page's underline in the nav.
+        Restrained to one mark like that, it reads the way a seal stamp does
+        on an ink-wash scroll: a single deliberate colour against an otherwise
+        monochrome page, not a palette.
+      </p>
+      <p>
+        Every page's prose is rewritten from TUG's real pages &mdash; the
+        homepage, <code>whatis.html</code>, <code>aims_ben.html</code>,
+        <code>join.html</code>, <code>TUGboat/</code>, <code>texlive/</code>,
+        <code>meetings/</code>, and <code>contact.html</code> &mdash; not
+        copied from them; facts (the founding year, Knuth's revision of
+        <cite>The Art of Computer Programming</cite>, the three membership
+        aims, the postal address) are checked against those pages rather than
+        against memory. The <a href="./join.html">join page</a> restructures
+        TUG's own membership information but still sends anyone ready to sign
+        up to <a href="https://tug.org/join.html">tug.org's real form</a>,
+        since this exercise has no backend or payment processor of its own.
+      </p>
+    </main>
+    <footer>
+      <p>
+        The real TUG is at <a href="https://tug.org/">tug.org</a>.
+      </p>
+      <address class="contact-block">
+        TeX Users Group &middot; PO&nbsp;Box&nbsp;2311, Portland, OR
+        97208-2311, USA<br />
+        <a href="mailto:office@tug.org">office@tug.org</a>
+      </address>
+    </footer>
+  </body>
+</html>

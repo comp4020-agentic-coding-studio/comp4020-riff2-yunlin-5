@@ -1,5 +1,30 @@
 # Process overview
 
+## The riff (this repo)
+
+This repo is a riff on the crit prototype recorded below, not a submission of
+its own. The riff's argument: the redesign was a well-written essay *about* TUG,
+and in becoming legible it dropped the things people visit tug.org to do. So it
+puts the organisation back in charge of its own site, in a monochrome Tailwind
+design where the real TUG logo is the only colour on the page
+([`e2272d2`](https://github.com/comp4020-agentic-coding-studio/comp4020-riff2-yunlin-5/commit/e2272d2)):
+
+- The news and events the original publishes are back, on the home page and on
+  a new `news.html`, each item linking out to the announcement it describes.
+- The link directory the redesign cut is back too, in a footer on every page
+  and in full on a new `resources.html`.
+- Every page now offers a way to act: join, renew, trial membership,
+  institutional membership, donate, member area.
+- `colophon.html` is gone. A site that explains its own design is speaking as
+  the designer, and this one speaks as the organisation.
+- The agent's `spec/crit2.test.ts` required that colophon, so it became
+  `spec/riff.test.ts` and now encodes the riff's brief instead: logo and an
+  action on every page, news that links out, no colophon, no em dashes. Its
+  static/no-script and navigation contracts carried over unchanged.
+
+Everything below is the crit agent's own record of the prototype this started
+from.
+
 ## What I built
 
 A five-page redesign of [tug.org](https://tug.org/), the real website of the

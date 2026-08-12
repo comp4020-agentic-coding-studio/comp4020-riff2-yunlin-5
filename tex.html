@@ -3,87 +3,363 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>What is TeX? &mdash; TeX Users Group</title>
+    <title>What is TeX? | TeX Users Group</title>
     <meta
       name="description"
-      content="A short history of TeX: why Donald Knuth built it, and why it's still used decades on."
+      content="A short history of TeX: why Donald Knuth built it, why it lasted, and where to start if you want to use it."
     />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body>
-    <header>
-      <div class="site-title">
-        <a href="./">TeX Users Group</a>
-        <nav aria-label="Primary">
-          <ul>
-            <li><a href="./">Home</a></li>
-            <li><a href="./tex.html" aria-current="page">What is TeX</a></li>
-            <li><a href="./join.html">Join</a></li>
-            <li><a href="./publications.html">Publications</a></li>
-            <li><a href="./colophon.html">Colophon</a></li>
+  <body class="font-sans">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-60 focus:rounded-md focus:bg-neutral-900 focus:px-4 focus:py-2 focus:text-sm focus:text-white"
+      >Skip to content</a
+    >
+    <header
+      class="sticky top-0 z-50 border-b border-neutral-200 bg-white/85 backdrop-blur-sm"
+    >
+      <div
+        class="mx-auto flex max-w-6xl flex-wrap items-center gap-x-6 gap-y-3 px-5 py-3 sm:px-8"
+      >
+        <a href="./" class="flex shrink-0 items-center gap-3">
+          <img
+            src="./tuglogo.svg"
+            alt="TeX Users Group"
+            width="756"
+            height="926"
+            class="h-10 w-auto"
+          />
+          <span class="text-[0.95rem] font-semibold tracking-tight"
+            >TeX Users Group</span
+          >
+        </a>
+        <nav aria-label="Primary" class="w-full sm:ml-auto sm:w-auto">
+          <ul
+            class="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-neutral-600"
+          >
+            <li><a href="./" class="hover:text-neutral-900">Home</a></li>
+            <li>
+              <a
+                href="./tex.html"
+                aria-current="page"
+                class="font-medium text-neutral-900 underline decoration-2 underline-offset-8"
+                >What is TeX</a
+              >
+            </li>
+            <li><a href="./news.html" class="hover:text-neutral-900">News</a></li>
+            <li>
+              <a href="./publications.html" class="hover:text-neutral-900"
+                >Publications</a
+              >
+            </li>
+            <li>
+              <a href="./resources.html" class="hover:text-neutral-900">Resources</a>
+            </li>
+            <li>
+              <a
+                href="./join.html"
+                class="rounded-full bg-neutral-900 px-4 py-1.5 font-medium text-white transition hover:bg-neutral-700"
+                >Join TUG</a
+              >
+            </li>
           </ul>
         </nav>
       </div>
     </header>
-    <main>
-      <span class="kicker">Started 1978, still running</span>
-      <h1>What is TeX, and why does it still matter?</h1>
-      <p>
-        TeX is a typesetting program: you write plain-text markup describing a
-        document, and TeX turns it into finished pages &mdash; correct hyphenation,
-        even spacing, mathematics set the way a human typesetter would set it. Most
-        people today reach it through LaTeX, a set of macros built on top that
-        makes the plain TeX language easier to write in.
-      </p>
-      <h2>Why it exists</h2>
-      <p>
-        In the late 1970s, Donald Knuth &mdash; a computer scientist, not a
-        typesetter &mdash; was revising the second volume of <cite
-          >The Art of Computer Programming</cite
-        >. The publisher's new digital typesetting system came back with proofs so
-        much worse than the first edition that he balked at them. Around the same
-        time he saw a book that had been typeset well by computer, and made the
-        connection: typesetting is just arranging ink and no-ink correctly. He
-        thought a proper solution would take about six months.
-      </p>
-      <p>
-        It took closer to ten years, with help along the way from typeface
-        designers including Hermann Zapf, Chuck Bigelow, Kris Holmes, and Matthew
-        Carter. The result was two programs: TeX for laying out text and
-        mathematics, and Metafont for describing the fonts themselves &mdash; both
-        released for no fee, with source available to anyone, at a time when the
-        commercial alternatives were expensive, proprietary, and often
-        machine-specific.
-      </p>
-      <h2>Why it lasted</h2>
-      <p>
-        The feature that mattered most in the long run wasn't the typography, it
-        was the promise underneath it: the same input file produces the same
-        output &mdash; same line breaks, same page breaks &mdash; on any machine,
-        forever. That's unusual. It's why a thesis or a paper written in LaTeX in
-        1990 will still typeset correctly today, and why the format never became
-        beholden to any one company's software surviving.
-      </p>
-      <p>
-        TeX itself has been declared frozen for years, deliberately: past a certain
-        point, stability outranked new features. The active development happens
-        around it &mdash; in LaTeX, in the fonts, and in the free
-        <a href="./publications.html#tex-live">TeX&nbsp;Live</a> distribution TUG
-        helps coordinate.
-      </p>
+
+    <main id="main">
+      <section class="border-b border-neutral-200">
+        <div class="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">
+            Started 1978, still running
+          </p>
+          <h1
+            class="mt-5 max-w-4xl text-4xl font-semibold leading-[1.1] tracking-tight sm:text-5xl"
+          >
+            What is TeX, and why does it still matter?
+          </h1>
+          <p class="mt-6 max-w-2xl text-lg leading-relaxed text-neutral-600">
+            TeX is a typesetting program: you write plain-text markup describing a
+            document, and TeX turns it into finished pages with correct hyphenation,
+            even spacing, and mathematics set the way a human typesetter would set
+            it. Most people today reach it through LaTeX, a set of macros built on
+            top that makes the plain TeX language easier to write in.
+          </p>
+        </div>
+      </section>
+
+      <section class="border-b border-neutral-200">
+        <div
+          class="mx-auto grid max-w-6xl gap-10 px-5 py-14 sm:px-8 sm:py-20 lg:grid-cols-[1fr_18rem]"
+        >
+          <div class="max-w-2xl">
+            <article>
+              <h2 class="text-2xl font-semibold tracking-tight sm:text-3xl">
+                Why it exists
+              </h2>
+              <p class="mt-5 leading-relaxed text-neutral-700">
+                In the late 1970s Donald Knuth, a computer scientist rather than a
+                typesetter, was revising the second volume of
+                <cite>The Art of Computer Programming</cite>. His publisher's new
+                digital typesetting system came back with proofs so much worse than
+                the first edition that he balked at them. Around the same time he saw
+                a book that had been typeset well by computer and made the
+                connection: typesetting is just arranging ink and no-ink correctly. He
+                thought a proper solution would take about six months.
+              </p>
+              <p class="mt-4 leading-relaxed text-neutral-700">
+                It took closer to ten years, with help along the way from typeface
+                designers including Hermann Zapf, Chuck Bigelow, Kris Holmes, and
+                Matthew Carter. The result was two programs: TeX for laying out text
+                and mathematics, and Metafont for describing the fonts themselves.
+                Both were released for no fee, with source available to anyone, at a
+                time when the commercial alternatives were expensive, proprietary, and
+                often machine-specific.
+              </p>
+            </article>
+
+            <article class="mt-12 border-t border-neutral-200 pt-10">
+              <h2 class="text-2xl font-semibold tracking-tight sm:text-3xl">
+                Why it lasted
+              </h2>
+              <p class="mt-5 leading-relaxed text-neutral-700">
+                The feature that mattered most in the long run was not the typography.
+                It was the promise underneath it: the same input file produces the
+                same output, the same line breaks and the same page breaks, on any
+                machine, forever. That is unusual. It is why a thesis written in LaTeX
+                in 1990 will still typeset correctly today, and why the format never
+                became beholden to any one company's software surviving.
+              </p>
+              <p class="mt-4 leading-relaxed text-neutral-700">
+                TeX itself has been frozen for years, deliberately: past a certain
+                point, stability outranked new features. The active development
+                happens around it, in LaTeX, in the fonts, and in the free
+                <a class="prose-link" href="./publications.html#tex-live"
+                  >TeX&nbsp;Live</a
+                >
+                distribution TUG helps coordinate.
+              </p>
+            </article>
+
+            <article class="mt-12 border-t border-neutral-200 pt-10">
+              <h2 class="text-2xl font-semibold tracking-tight sm:text-3xl">
+                Where TUG comes in
+              </h2>
+              <p class="mt-5 leading-relaxed text-neutral-700">
+                TeX is free and always has been, but somebody still has to package it,
+                test it on three operating systems, run the archive it downloads from,
+                publish the documentation, and pay for the meetings where the people
+                who maintain it talk to each other. That is the work TUG funds, out of
+                membership dues rather than sales, since 1980.
+              </p>
+              <div class="mt-7 flex flex-wrap gap-3">
+                <a
+                  href="./join.html"
+                  class="rounded-full bg-neutral-900 px-6 py-3 text-sm font-medium text-white transition hover:bg-neutral-700"
+                  >Join or renew</a
+                >
+                <a
+                  href="https://tug.org/begin.html"
+                  class="rounded-full border border-neutral-300 px-6 py-3 text-sm font-medium transition hover:border-neutral-900"
+                  >Getting started with TeX</a
+                >
+              </div>
+            </article>
+          </div>
+
+          <aside class="lg:sticky lg:top-28 lg:self-start">
+            <div class="rounded-xl border border-neutral-200 bg-neutral-50 p-7">
+              <h2
+                class="text-xs font-semibold uppercase tracking-[0.14em] text-neutral-500"
+              >
+                Further reading
+              </h2>
+              <ul class="mt-4 space-y-3 text-sm">
+                <li>
+                  <a class="prose-link" href="https://tug.org/whatis.html"
+                    >TUG's history of TeX</a
+                  >
+                </li>
+                <li>
+                  <a class="prose-link" href="https://texfaq.org/">The TeX FAQ</a>
+                </li>
+                <li>
+                  <a class="prose-link" href="https://www.learnlatex.org/"
+                    >Learn LaTeX, an online tutorial</a
+                  >
+                </li>
+                <li>
+                  <a class="prose-link" href="https://tug.org/texshowcase/"
+                    >The TeX showcase</a
+                  >
+                </li>
+                <li>
+                  <a class="prose-link" href="https://tug.org/interviews/"
+                    >Interviews with the people involved</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="prose-link"
+                    href="https://www-cs-faculty.stanford.edu/~knuth/"
+                    >Donald Knuth's home page</a
+                  >
+                </li>
+              </ul>
+              <p class="mt-6 border-t border-neutral-200 pt-5 text-sm text-neutral-600">
+                Ready to install it? Start with
+                <a class="prose-link" href="./resources.html#software"
+                  >software and downloads</a
+                >.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </section>
     </main>
-    <footer>
-      <p>
-        This is a redesign of
-        <a href="https://tug.org/">tug.org</a>, the TeX Users Group's real
-        website &mdash; see the <a href="./colophon.html">colophon</a>.
-      </p>
-      <address class="contact-block">
-        TeX Users Group &middot; PO&nbsp;Box&nbsp;2311, Portland, OR
-        97208-2311, USA<br />
-        <a href="mailto:office@tug.org">office@tug.org</a>
-      </address>
+
+    <footer class="border-t border-neutral-200 bg-white">
+      <div class="mx-auto max-w-6xl px-5 py-14 sm:px-8">
+        <nav aria-label="Site directory" class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          <div>
+            <h2 class="text-xs font-semibold uppercase tracking-[0.14em] text-neutral-500">
+              Membership
+            </h2>
+            <ul class="mt-4 space-y-2 text-sm text-neutral-700">
+              <li><a class="prose-link" href="./join.html">Join or renew</a></li>
+              <li>
+                <a class="prose-link" href="https://tug.org/forms/current/trialapp.html"
+                  >Trial membership</a
+                >
+              </li>
+              <li>
+                <a class="prose-link" href="https://tug.org/members/">Member area</a>
+              </li>
+              <li>
+                <a class="prose-link" href="https://tug.org/instmem.html"
+                  >Institutional members</a
+                >
+              </li>
+              <li>
+                <a class="prose-link" href="https://tug.org/donate.html">Donate</a>
+              </li>
+              <li>
+                <a class="prose-link" href="https://tug.org/tax-exempt/">Tax exempt</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="text-xs font-semibold uppercase tracking-[0.14em] text-neutral-500">
+              Software
+            </h2>
+            <ul class="mt-4 space-y-2 text-sm text-neutral-700">
+              <li>
+                <a class="prose-link" href="https://tug.org/texlive/">TeX&nbsp;Live</a>
+              </li>
+              <li><a class="prose-link" href="https://tug.org/mactex/">MacTeX</a></li>
+              <li><a class="prose-link" href="https://miktex.org/">MiKTeX</a></li>
+              <li><a class="prose-link" href="https://ctan.org/">Downloads (CTAN)</a></li>
+              <li>
+                <a class="prose-link" href="https://tug.org/FontCatalogue/"
+                  >Font catalogue</a
+                >
+              </li>
+              <li>
+                <a class="prose-link" href="https://tug.org/interest.html"
+                  >TeX around the web</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="text-xs font-semibold uppercase tracking-[0.14em] text-neutral-500">
+              TUG activities
+            </h2>
+            <ul class="mt-4 space-y-2 text-sm text-neutral-700">
+              <li><a class="prose-link" href="https://tug.org/TUGboat/">TUGboat</a></li>
+              <li>
+                <a class="prose-link" href="https://tug.org/books/"
+                  >Bookstore and reviews</a
+                >
+              </li>
+              <li><a class="prose-link" href="https://tug.org/store/">TUG store</a></li>
+              <li>
+                <a class="prose-link" href="https://tug.org/interviews/">Interviews</a>
+              </li>
+              <li><a class="prose-link" href="https://tug.org/board.html">Board</a></li>
+              <li>
+                <a class="prose-link" href="https://tug.org/election/">Elections</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="text-xs font-semibold uppercase tracking-[0.14em] text-neutral-500">
+              Community
+            </h2>
+            <ul class="mt-4 space-y-2 text-sm text-neutral-700">
+              <li>
+                <a class="prose-link" href="https://tug.org/usergroups.html"
+                  >User groups</a
+                >
+              </li>
+              <li>
+                <a class="prose-link" href="https://tug.org/meetings.html"
+                  >Conferences</a
+                >
+              </li>
+              <li>
+                <a class="prose-link" href="https://tug.org/mailman/listinfo"
+                  >Mailing lists</a
+                >
+              </li>
+              <li>
+                <a class="prose-link" href="https://tug.org/twg.html">Working groups</a>
+              </li>
+              <li>
+                <a class="prose-link" href="https://tug.org/jobboard.html"
+                  >Job openings</a
+                >
+              </li>
+              <li>
+                <a class="prose-link" href="https://tug.org/consultants.html"
+                  >Consultants for hire</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <div
+          class="mt-12 flex flex-col gap-6 border-t border-neutral-200 pt-8 text-sm text-neutral-600 sm:flex-row sm:justify-between"
+        >
+          <address class="not-italic">
+            <strong class="font-medium text-neutral-900">TeX Users Group</strong><br />
+            PO&nbsp;Box&nbsp;2311, Portland, OR 97208-2311, USA<br />
+            <a class="prose-link" href="mailto:office@tug.org">office@tug.org</a>
+            &middot; +1 503-223-9994
+          </address>
+          <div class="sm:text-right">
+            <p>
+              <a class="prose-link" href="https://www.facebook.com/groups/TeXUsersGroup"
+                >Facebook</a
+              >
+              &middot;
+              <a class="prose-link" href="https://techhub.social/@TeXUsersGroup"
+                >Mastodon</a
+              >
+              &middot;
+              <a class="prose-link" href="https://tug.org/rss/tug.xml">RSS</a>
+            </p>
+            <p class="mt-3 max-w-md text-neutral-500">
+              An unsolicited redesign of
+              <a class="prose-link" href="https://tug.org/">tug.org</a>, built as a
+              student studio exercise. Not affiliated with the TeX Users Group.
+            </p>
+          </div>
+        </div>
+      </div>
     </footer>
   </body>
 </html>

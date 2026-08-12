@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TeX Users Group</title>
+    <title>News and events | TeX Users Group</title>
     <meta
       name="description"
-      content="The TeX Users Group supports free, high-quality typesetting software: TeX Live, the TUGboat journal, and the annual conference. Join, donate, or start using TeX."
+      content="TUG news, upcoming TeX meetings and conferences, and recent events, with links to the announcements and videos."
     />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="stylesheet" href="./styles.css" />
@@ -39,16 +39,16 @@
           <ul
             class="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-neutral-600"
           >
+            <li><a href="./" class="hover:text-neutral-900">Home</a></li>
+            <li><a href="./tex.html" class="hover:text-neutral-900">What is TeX</a></li>
             <li>
               <a
-                href="./"
+                href="./news.html"
                 aria-current="page"
                 class="font-medium text-neutral-900 underline decoration-2 underline-offset-8"
-                >Home</a
+                >News</a
               >
             </li>
-            <li><a href="./tex.html" class="hover:text-neutral-900">What is TeX</a></li>
-            <li><a href="./news.html" class="hover:text-neutral-900">News</a></li>
             <li>
               <a href="./publications.html" class="hover:text-neutral-900"
                 >Publications</a
@@ -71,173 +71,34 @@
 
     <main id="main">
       <section class="border-b border-neutral-200">
-        <div class="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-24">
-          <p
-            class="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500"
-          >
-            A nonprofit, since 1980
+        <div class="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">
+            Mirrored from tug.org, August 2026
           </p>
-          <h1
-            class="mt-5 max-w-4xl text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl"
-          >
-            The people behind TeX, LaTeX, and TeX&nbsp;Live
+          <h1 class="mt-5 max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl">
+            News and events
           </h1>
           <p class="mt-6 max-w-2xl text-lg leading-relaxed text-neutral-600">
-            The TeX Users Group (TUG) is a member-funded nonprofit that keeps a
-            decades-old typesetting system usable, current, and free. If you have
-            ever opened a paper, thesis, or book with crisp mathematics and even,
-            hand-set looking type, there is a good chance TeX did the setting, and
-            TUG keeps the lights on for the people who maintain it.
+            Releases, publications, and the meetings the TeX world runs through the
+            year. Announcements also go out on the
+            <a class="prose-link" href="https://lists.tug.org/tex-announce"
+              >monthly newsletter</a
+            >
+            and the
+            <a class="prose-link" href="https://tug.org/rss/tug.xml">RSS feed</a>, both
+            open to everyone.
           </p>
-          <div class="mt-9 flex flex-wrap items-center gap-3">
-            <a
-              href="./join.html"
-              class="rounded-full bg-neutral-900 px-6 py-3 text-sm font-medium text-white transition hover:bg-neutral-700"
-              >Join or renew</a
-            >
-            <a
-              href="https://tug.org/donate.html"
-              class="rounded-full border border-neutral-300 px-6 py-3 text-sm font-medium transition hover:border-neutral-900"
-              >Make a donation</a
-            >
-            <a
-              href="./tex.html"
-              class="px-2 py-3 text-sm font-medium text-neutral-600 underline decoration-neutral-300 underline-offset-4 transition hover:text-neutral-900"
-              >New to TeX?</a
-            >
-          </div>
-          <dl
-            class="mt-14 grid max-w-3xl grid-cols-2 gap-x-6 gap-y-8 border-t border-neutral-200 pt-8 sm:grid-cols-4"
-          >
-            <div>
-              <dt class="text-xs uppercase tracking-[0.14em] text-neutral-500">
-                Founded
-              </dt>
-              <dd class="mt-1 text-2xl font-semibold tracking-tight">1980</dd>
-            </div>
-            <div>
-              <dt class="text-xs uppercase tracking-[0.14em] text-neutral-500">
-                TUGboat issues
-              </dt>
-              <dd class="mt-1 text-2xl font-semibold tracking-tight">3 a year</dd>
-            </div>
-            <div>
-              <dt class="text-xs uppercase tracking-[0.14em] text-neutral-500">
-                TeX&nbsp;Live
-              </dt>
-              <dd class="mt-1 text-2xl font-semibold tracking-tight">Free</dd>
-            </div>
-            <div>
-              <dt class="text-xs uppercase tracking-[0.14em] text-neutral-500">
-                Funded by
-              </dt>
-              <dd class="mt-1 text-2xl font-semibold tracking-tight">Members</dd>
-            </div>
-          </dl>
+          <ul class="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+            <li><a class="prose-link" href="#latest">Latest news</a></li>
+            <li><a class="prose-link" href="#events">Upcoming events</a></li>
+            <li><a class="prose-link" href="#recent">Recent events</a></li>
+          </ul>
         </div>
       </section>
 
-      <section class="border-b border-neutral-200 bg-neutral-50">
+      <section id="latest" class="border-b border-neutral-200">
         <div class="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
-          <h2 class="text-2xl font-semibold tracking-tight sm:text-3xl">
-            Start here
-          </h2>
-          <p class="mt-3 max-w-2xl text-neutral-600">
-            You do not need a membership to use any of this. Install the software,
-            work through a tutorial, and ask questions in public.
-          </p>
-          <div class="mt-10 grid gap-px overflow-hidden rounded-xl border border-neutral-200 bg-neutral-200 md:grid-cols-3">
-            <article class="bg-white p-7">
-              <h3 class="text-lg font-semibold tracking-tight">Install TeX&nbsp;Live</h3>
-              <p class="mt-2 text-sm leading-relaxed text-neutral-600">
-                The free, cross-platform distribution most people install to get a
-                working TeX and LaTeX system.
-              </p>
-              <ul class="mt-4 space-y-1.5 text-sm">
-                <li>
-                  <a class="prose-link" href="https://tug.org/texlive/windows.html"
-                    >Windows</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="prose-link"
-                    href="https://tug.org/mactex/mactex-download.html"
-                    >macOS (MacTeX)</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="prose-link"
-                    href="https://tug.org/texlive/quickinstall.html"
-                    >GNU/Linux and Unix</a
-                  >
-                </li>
-              </ul>
-            </article>
-            <article class="bg-white p-7">
-              <h3 class="text-lg font-semibold tracking-tight">Learn LaTeX</h3>
-              <p class="mt-2 text-sm leading-relaxed text-neutral-600">
-                An interactive online tutorial for writing your first documents,
-                plus the resources TUG keeps for beginners.
-              </p>
-              <ul class="mt-4 space-y-1.5 text-sm">
-                <li>
-                  <a class="prose-link" href="https://www.learnlatex.org/"
-                    >Learn LaTeX tutorial</a
-                  >
-                </li>
-                <li>
-                  <a class="prose-link" href="https://tug.org/begin.html"
-                    >Getting started page</a
-                  >
-                </li>
-                <li>
-                  <a class="prose-link" href="https://texfaq.org/">The TeX FAQ</a>
-                </li>
-              </ul>
-            </article>
-            <article class="bg-white p-7">
-              <h3 class="text-lg font-semibold tracking-tight">Get help</h3>
-              <p class="mt-2 text-sm leading-relaxed text-neutral-600">
-                Community support, all of it public and free to read whether or not
-                you join.
-              </p>
-              <ul class="mt-4 space-y-1.5 text-sm">
-                <li>
-                  <a class="prose-link" href="https://tex.stackexchange.com/"
-                    >Questions and answers</a
-                  >
-                </li>
-                <li>
-                  <a class="prose-link" href="https://latex.org/forum/">LaTeX forum</a>
-                </li>
-                <li>
-                  <a class="prose-link" href="https://lists.tug.org/texhax"
-                    >texhax mailing list</a
-                  >
-                </li>
-              </ul>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="news" class="border-b border-neutral-200">
-        <div class="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
-          <div class="flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <h2 class="text-2xl font-semibold tracking-tight sm:text-3xl">News</h2>
-              <p class="mt-3 max-w-2xl text-neutral-600">
-                What the group has published and released lately.
-              </p>
-            </div>
-            <a
-              href="./news.html"
-              class="text-sm font-medium underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-900"
-              >All news and events</a
-            >
-          </div>
+          <h2 class="text-2xl font-semibold tracking-tight sm:text-3xl">Latest news</h2>
           <ol class="mt-10 divide-y divide-neutral-200 border-y border-neutral-200">
             <li class="grid gap-2 py-6 sm:grid-cols-[9rem_1fr] sm:gap-8">
               <p class="text-xs font-semibold uppercase tracking-[0.14em] text-neutral-500">
@@ -246,16 +107,22 @@
               <div>
                 <h3 class="text-lg font-medium tracking-tight">
                   <a class="prose-link" href="https://tug.org/TUGboat/tb47-1/"
-                    >TUGboat 47:1 is out</a
+                    >TUGboat 47:1 is available</a
                   >
                 </h3>
                 <p class="mt-2 max-w-3xl text-sm leading-relaxed text-neutral-600">
-                  Available online and from the
+                  Online and from the
                   <a class="prose-link" href="https://tug.org/store/#tugboat"
                     >TUG store</a
-                  >, and posted to current members. The previous issue,
-                  <a class="prose-link" href="https://tug.org/TUGboat/tb46-3/">46:3</a>,
-                  is now public. The next issue is the TUG&nbsp;2026 proceedings.
+                  >, and mailed to current members. Prior issue
+                  <a class="prose-link" href="https://tug.org/TUGboat/tb46-3/">46:3</a>
+                  is now publicly available. The next issue will be the
+                  <a class="prose-link" href="https://tug.org/tug2026/">TUG&nbsp;2026</a>
+                  proceedings, with a papers deadline of 26 July 2026;
+                  <a class="prose-link" href="https://tug.org/TUGboat/location.html"
+                    >submissions for the next regular issue</a
+                  >
+                  are due 23 October 2026.
                 </p>
               </div>
             </li>
@@ -266,18 +133,19 @@
               <div>
                 <h3 class="text-lg font-medium tracking-tight">
                   <a class="prose-link" href="https://tug.org/texlive/"
-                    >TeX&nbsp;Live 2026 and MacTeX 2026 released</a
+                    >TeX&nbsp;Live 2026 and MacTeX 2026 have been released</a
                   >
                 </h3>
                 <p class="mt-2 max-w-3xl text-sm leading-relaxed text-neutral-600">
-                  Both are distributed primarily through
-                  <a class="prose-link" href="https://ctan.org/">CTAN</a>. See the
+                  Distributed primarily online through
+                  <a class="prose-link" href="https://ctan.org/">CTAN</a>. More
+                  information on the
                   <a class="prose-link" href="https://ctan.org/pkg/texlive"
                     >TeX&nbsp;Live</a
                   >
                   and
                   <a class="prose-link" href="https://ctan.org/pkg/mactex">MacTeX</a>
-                  package pages for details.
+                  package pages.
                 </p>
               </div>
             </li>
@@ -290,15 +158,16 @@
                   <a
                     class="prose-link"
                     href="https://tug.org/books/reviews/tb146reviews-kottwitz-beginners3.html"
-                    >New review: LaTeX Beginner's Guide, third edition</a
+                    >New book review: LaTeX Beginner's Guide, third edition</a
                   >
                 </h3>
                 <p class="mt-2 max-w-3xl text-sm leading-relaxed text-neutral-600">
-                  Stefan Kottwitz's guide, reviewed by Uwe Ziegenhagen, in TUG's
-                  running series of
+                  By Stefan Kottwitz, reviewed by Uwe Ziegenhagen. TUG keeps a running
+                  set of
                   <a class="prose-link" href="https://tug.org/books/#reviews"
-                    >book reviews</a
-                  >.
+                    >reviews and discounted titles</a
+                  >
+                  in its bookstore.
                 </p>
               </div>
             </li>
@@ -311,39 +180,36 @@
                   <a
                     class="prose-link"
                     href="https://tug.org/publicity/membership_poster_math/"
-                    >A new membership poster</a
+                    >A new TUG membership poster</a
                   >
                 </h3>
                 <p class="mt-2 max-w-3xl text-sm leading-relaxed text-neutral-600">
-                  A one-page flyer aimed at STEM departments and organisations.
-                  Posting it, on a noticeboard or online, genuinely helps.
+                  Oriented towards STEM departments and organisations. Posts of the
+                  one-page flyer, electronic or physical, are much appreciated. Other
+                  material lives in
+                  <a class="prose-link" href="https://tug.org/publicity/"
+                    >stickers and publicity</a
+                  >.
                 </p>
               </div>
             </li>
           </ol>
-          <p class="mt-6 text-sm text-neutral-500">
-            Also available as an
-            <a class="prose-link" href="https://tug.org/rss/tug.xml">RSS feed</a> or a
-            <a class="prose-link" href="https://lists.tug.org/tex-announce"
-              >monthly newsletter</a
-            >, which is open to everyone and sent to members automatically.
-          </p>
         </div>
       </section>
 
-      <section class="border-b border-neutral-200 bg-neutral-50">
+      <section id="events" class="border-b border-neutral-200 bg-neutral-50">
         <div class="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
           <div class="flex flex-wrap items-end justify-between gap-4">
             <h2 class="text-2xl font-semibold tracking-tight sm:text-3xl">
               Upcoming events
             </h2>
             <a
-              href="./news.html#events"
+              href="https://tug.org/meetings.html"
               class="text-sm font-medium underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-900"
               >Full meeting list</a
             >
           </div>
-          <ul class="mt-8 grid gap-px overflow-hidden rounded-xl border border-neutral-200 bg-neutral-200 md:grid-cols-3">
+          <ul class="mt-10 grid gap-px overflow-hidden rounded-xl border border-neutral-200 bg-neutral-200 md:grid-cols-2">
             <li class="bg-white p-7">
               <p class="text-xs font-semibold uppercase tracking-[0.14em] text-neutral-500">
                 24 to 29 August 2026
@@ -353,8 +219,9 @@
                   >ConTeXt Meeting 2026</a
                 >
               </h3>
-              <p class="mt-2 text-sm text-neutral-600">
-                Maibach, Germany. Theme: Focussing.
+              <p class="mt-2 text-sm leading-relaxed text-neutral-600">
+                Maibach, Germany. This year's theme is Focussing, though other topics
+                are welcome too.
               </p>
             </li>
             <li class="bg-white p-7">
@@ -368,8 +235,8 @@
                   >DANTE autumn meeting</a
                 >
               </h3>
-              <p class="mt-2 text-sm text-neutral-600">
-                Ordix IT, with the general meeting on the second day.
+              <p class="mt-2 text-sm leading-relaxed text-neutral-600">
+                At Ordix IT, with a short general meeting on 26 September.
               </p>
             </li>
             <li class="bg-white p-7">
@@ -381,127 +248,143 @@
                   >Unicode Technology Workshop</a
                 >
               </h3>
-              <p class="mt-2 text-sm text-neutral-600">
+              <p class="mt-2 text-sm leading-relaxed text-neutral-600">
                 Unicode in the World, at the Atelier National de Recherche
                 Typographique.
+              </p>
+            </li>
+            <li class="bg-white p-7">
+              <p class="text-xs font-semibold uppercase tracking-[0.14em] text-neutral-500">
+                8 to 10 April 2027
+              </p>
+              <h3 class="mt-2 text-lg font-medium tracking-tight">
+                <a class="prose-link" href="https://www.dante.de/veranstaltungen/"
+                  >DANTE spring 2027 meeting</a
+                >
+              </h3>
+              <p class="mt-2 text-sm leading-relaxed text-neutral-600">
+                University of Ulm, Germany. Tutorials, an introduction, and a
+                reception the evening before.
               </p>
             </li>
           </ul>
         </div>
       </section>
 
-      <section class="border-b border-neutral-200">
+      <section id="recent" class="border-b border-neutral-200">
         <div class="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
           <h2 class="text-2xl font-semibold tracking-tight sm:text-3xl">
-            What TUG actually does
+            Recent events
           </h2>
-          <p class="mt-3 max-w-2xl text-neutral-600">
-            Three things, mostly. Membership dues, not investors, pay for all of
-            them.
-          </p>
-          <div class="mt-10 grid gap-8 md:grid-cols-3">
-            <article class="border-t border-neutral-900 pt-5">
-              <h3 class="text-lg font-semibold tracking-tight">
-                <a class="prose-link" href="./publications.html#tex-live"
-                  >Coordinates TeX&nbsp;Live</a
-                >
-              </h3>
-              <p class="mt-2 text-sm leading-relaxed text-neutral-600">
-                The distribution most people install to get a working TeX system on
-                Linux, Windows, or macOS, maintained jointly with user groups
-                worldwide and released once a year.
+          <ol class="mt-10 divide-y divide-neutral-200 border-y border-neutral-200">
+            <li class="grid gap-2 py-6 sm:grid-cols-[9rem_1fr] sm:gap-8">
+              <p class="text-xs font-semibold uppercase tracking-[0.14em] text-neutral-500">
+                July 2026
               </p>
-            </article>
-            <article class="border-t border-neutral-900 pt-5">
-              <h3 class="text-lg font-semibold tracking-tight">
-                <a class="prose-link" href="./publications.html#tugboat"
-                  >Publishes TUGboat</a
-                >
-              </h3>
-              <p class="mt-2 text-sm leading-relaxed text-neutral-600">
-                A journal of tutorials, technical articles, and community news that
-                has run since the group was founded. Anyone can propose an article.
-              </p>
-            </article>
-            <article class="border-t border-neutral-900 pt-5">
-              <h3 class="text-lg font-semibold tracking-tight">
-                <a class="prose-link" href="./publications.html#conference"
-                  >Runs the annual conference</a
-                >
-              </h3>
-              <p class="mt-2 text-sm leading-relaxed text-neutral-600">
-                Usually held alongside a sister user group, and open to everyone
-                from a first LaTeX document to font engineering.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="border-b border-neutral-200 bg-neutral-50">
-        <div class="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
-          <div class="grid gap-10 lg:grid-cols-[1.2fr_1fr]">
-            <div>
-              <h2 class="text-2xl font-semibold tracking-tight sm:text-3xl">
-                CTAN, the archive underneath all of it
-              </h2>
-              <p class="mt-4 max-w-2xl leading-relaxed text-neutral-600">
-                The Comprehensive TeX Archive Network is the primary repository for
-                TeX-related software on the internet, with many thousands of
-                packages. Nearly every TeX installation pulls from it, and TUG helps
-                keep it running.
-              </p>
-              <ul class="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm">
-                <li>
-                  <a class="prose-link" href="https://ctan.org/pkg/">Package list</a>
-                </li>
-                <li>
-                  <a class="prose-link" href="https://ctan.org/topics/cloud"
-                    >Topic cloud</a
+              <div>
+                <h3 class="text-lg font-medium tracking-tight">
+                  <a class="prose-link" href="https://tug.org/tug2026/">TUG 2026</a>
+                </h3>
+                <p class="mt-2 max-w-3xl text-sm leading-relaxed text-neutral-600">
+                  Alt Hotel Calgary East Village, Calgary, Canada, 17 to 19 July, with
+                  a
+                  <a class="prose-link" href="https://tug.org/tug2026/workshop.html"
+                    >LaTeX developers' workshop</a
                   >
-                </li>
-                <li>
-                  <a class="prose-link" href="https://ctan.org/search.html"
-                    >Search CTAN</a
+                  the day before.
+                  <a class="prose-link" href="https://tug.org/l/tug26-video"
+                    >Videos for all talks</a
                   >
-                </li>
-                <li>
-                  <a class="prose-link" href="https://ctan.org/ctan-ann/rss"
-                    >Update feed</a
-                  >
-                </li>
-              </ul>
-            </div>
-            <div class="rounded-xl border border-neutral-200 bg-white p-7">
-              <h3 class="text-sm font-semibold uppercase tracking-[0.14em] text-neutral-500">
-                Where the money goes
-              </h3>
-              <ul class="mt-4 space-y-3 text-sm leading-relaxed text-neutral-600">
-                <li>Development funding for TeX, LaTeX, and related projects.</li>
-                <li>The TeX Collection and its annual release.</li>
-                <li>TUGboat, in print and online.</li>
-                <li>Bursaries and the running of the annual conference.</li>
-              </ul>
-              <p class="mt-5 text-sm">
-                <a class="prose-link" href="https://tug.org/tc/devfund/"
-                  >TeX development fund</a
-                >
+                  are available. TUG&nbsp;2027 will be held in Paris in the summer.
+                </p>
+              </div>
+            </li>
+            <li class="grid gap-2 py-6 sm:grid-cols-[9rem_1fr] sm:gap-8">
+              <p class="text-xs font-semibold uppercase tracking-[0.14em] text-neutral-500">
+                July 2026
               </p>
-            </div>
-          </div>
+              <div>
+                <h3 class="text-lg font-medium tracking-tight">
+                  <a class="prose-link" href="https://ossconf.fri.uniza.sk/"
+                    >OSSConf 2026</a
+                  >
+                </h3>
+                <p class="mt-2 max-w-3xl text-sm leading-relaxed text-neutral-600">
+                  University of Zilina, Slovakia, 1 to 3 July, with a dedicated TeX and
+                  R session and several TeX-related workshops.
+                </p>
+              </div>
+            </li>
+            <li class="grid gap-2 py-6 sm:grid-cols-[9rem_1fr] sm:gap-8">
+              <p class="text-xs font-semibold uppercase tracking-[0.14em] text-neutral-500">
+                June 2026
+              </p>
+              <div>
+                <h3 class="text-lg font-medium tracking-tight">
+                  <a
+                    class="prose-link"
+                    href="https://pdfa.org/event/webinar-accessible-mathematical-content-in-pdf/"
+                    >Accessible Mathematical Content in PDF</a
+                  >
+                </h3>
+                <p class="mt-2 max-w-3xl text-sm leading-relaxed text-neutral-600">
+                  A webinar presented on 16 June by LaTeX team members and colleagues,
+                  available from the
+                  <a class="prose-link" href="https://pdfa.org">PDF Association</a>
+                  along with related resources.
+                </p>
+              </div>
+            </li>
+            <li class="grid gap-2 py-6 sm:grid-cols-[9rem_1fr] sm:gap-8">
+              <p class="text-xs font-semibold uppercase tracking-[0.14em] text-neutral-500">
+                April 2026
+              </p>
+              <div>
+                <h3 class="text-lg font-medium tracking-tight">
+                  <a
+                    class="prose-link"
+                    href="https://bachotex.gust.org.pl/index_en.html"
+                    >EuroBachoTeX 2026</a
+                  >
+                </h3>
+                <p class="mt-2 max-w-3xl text-sm leading-relaxed text-neutral-600">
+                  Bachotek, Poland, 29 April to 3 May, on the theme TeX vs. AI. The
+                  <a
+                    class="prose-link"
+                    href="https://bachotex.gust.org.pl/2026/cfp_en.html"
+                    >call for papers</a
+                  >
+                  and other details are on the GUST site.
+                </p>
+              </div>
+            </li>
+            <li class="grid gap-2 py-6 sm:grid-cols-[9rem_1fr] sm:gap-8">
+              <p class="text-xs font-semibold uppercase tracking-[0.14em] text-neutral-500">
+                March 2026
+              </p>
+              <div>
+                <h3 class="text-lg font-medium tracking-tight">
+                  Frank Mittelbach receives an honorary doctorate
+                </h3>
+                <p class="mt-2 max-w-3xl text-sm leading-relaxed text-neutral-600">
+                  Masaryk University Brno recognised his life's work on document
+                  engineering and on making LaTeX what it is today, with a public
+                  ceremony and talk on 19 March.
+                </p>
+              </div>
+            </li>
+          </ol>
         </div>
       </section>
 
       <section class="bg-neutral-900 text-neutral-100">
         <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
           <h2 class="max-w-3xl text-2xl font-semibold tracking-tight sm:text-4xl">
-            TUG is a not-for-profit organisation by, for, and of its members
+            Conferences and journals run on membership dues
           </h2>
           <p class="mt-5 max-w-2xl leading-relaxed text-neutral-300">
-            If you use any TeX-related program, consider joining TUG or one of the
-            other user groups around the world. Memberships and donations are
-            tax-deductible in the US, and every membership is for the calendar year
-            no matter when you join.
+            Bursaries, streaming, and proceedings all cost money that comes from
+            members and donors rather than sponsors.
           </p>
           <div class="mt-8 flex flex-wrap items-center gap-3">
             <a
@@ -513,11 +396,6 @@
               href="https://tug.org/donate.html"
               class="rounded-full border border-neutral-600 px-6 py-3 text-sm font-medium transition hover:border-neutral-300"
               >Donate</a
-            >
-            <a
-              href="https://tug.org/usergroups.html"
-              class="px-2 py-3 text-sm text-neutral-400 underline decoration-neutral-600 underline-offset-4 transition hover:text-white"
-              >Other TeX user groups</a
             >
           </div>
         </div>
